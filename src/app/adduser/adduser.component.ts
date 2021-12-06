@@ -31,6 +31,7 @@ export class AdduserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.onAddUserClicked.emit(this.users);
   }
 
   public onAddUser(email: string, password: string, address: string, e: Event) {
