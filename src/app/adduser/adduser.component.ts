@@ -12,17 +12,20 @@ export class AdduserComponent implements OnInit {
     {
       email: 'hasan@gmail.com',
       password: '123',
-      address: 'urmia'
+      address: 'urmia',
+      editMode: false
     },
     {
       email: 'asiye@gmail.com',
       password: '123',
-      address: 'khoy'
+      address: 'khoy',
+      editMode: false
     },
     {
       email: 'mohamad@gmail.com',
       password: '123',
-      address: 'paris'
+      address: 'paris',
+      editMode: false
     },
   ];
 
@@ -39,7 +42,8 @@ export class AdduserComponent implements OnInit {
     let u: IUser = {
       email: email,
       password: password,
-      address: address
+      address: address,
+      editMode: false
     };
     this.users.push(u);
     this.onAddUserClicked.emit(this.users);

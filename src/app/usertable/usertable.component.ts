@@ -15,4 +15,8 @@ export class UsertableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public setEditMode(user: IUser) {
+    user.editMode = !user.editMode;
+  }
+
 }
