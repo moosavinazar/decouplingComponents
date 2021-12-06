@@ -1,39 +1,7 @@
 <div class="container-fluid mt-3">
-  <form class="row g-3">
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input #email type="email" class="form-control" id="inputEmail4">
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input #password type="password" class="form-control" id="inputPassword4">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">Address</label>
-      <input #address type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
 
-    <div class="col-12">
-      <button (click)="onAddUser(email.value, password.value, address.value, $event)" type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-  </form>
+  <app-adduser (onAddUserClicked)="userAdded($event)"></app-adduser>
 
-  <table class="table table-dark table-striped mt-5">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
-      <th scope="col">Address</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of users; let i=index">
-      <th scope="row">{{ i }}</th>
-      <td>{{ user.email }}</td>
-      <td>{{ user.password }}</td>
-      <td>{{ user.address }}</td>
-    </tr>
-    </tbody>
-  </table>
+  <app-usertable [users]="users"></app-usertable>
+
 </div>
